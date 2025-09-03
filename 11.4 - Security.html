@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Chapter 11 - Dependability and Security</title>
+ </head>
+ <body>
+    
+    <header>
+        <h3>11.4 Security</h3>
+    </header>
+
+    <main>
+
+        <section>
+            <p>Security is a system attribute that reflects the ability of the system to protect itself from external attacks, which may be accidental or deliberate. These external attacks are possible because most general-purpose computers are now networked and are</p>
+            <img src="Images/Annotation 2025-09-03 104221.png" alt="Figure 11.7">
+            <h6>Figure 11.7</h6>
+            <h6>Security terminology</h6>
+            <p>therefore accessible by outsiders. Examples of attacks might be the installation of viruses and Trojan horses, unauthorized use of system services or unauthorized modification of a system or its data. If you really want a secure system, it is best not to connect it to the Internet. Then, your security problems are limited to ensuring that authorized users do not abuse the system. In practice, however, there are huge benefits from networked access for most large systems so disconnecting from the Internet is not cost effective.</p>
+            <p>For some systems, security is the most important dimension of system dependability. Military systems, systems for electronic commerce, and systems that involve the processing and interchange of confidential information must be designed so that they achieve a high level of security. If an airline reservation system is unavailable, for example, this causes inconvenience and some delays in issuing tickets. However, if the system is insecure then an attacker could delete all bookings and it would be practically impossible for normal airline operations to continue.</p>
+            <p>As with other aspects of dependability, there is a specialized terminology associated with security. Some important terms, as discussed by Pfleeger (Pfleeger and Pfleeger, 2007), are defined in Figure 11.7. Figure 11.8 takes the security concepts described in Figure 11.7 and shows how they relate to the following scenario taken from the MHC-PMS:</p>
+            <i>Clinic staff log on to the MHC-PMS with a username and password. The system requires passwords to be at least eight letters long but allows any password to be set without further checking. A criminal finds out that a well-paid sports star is receiving treatment for mental health problems. He would like to gain illegal access to information in this system so that he can blackmail the star.</i>
+            <img src="Images/Annotation 2025-09-03 110041.png" alt="Figure 11.8">
+            <h6>Figure 11.8</h6>
+            <h6>Examples of security terminology</h6>
+            <i>By posing as a concerned relative and talking with the nurses in the mental health clinic, he discovers how to access the system and personal information about the nurses. By checking name badges, he discovers the names of some of the people allowed access. He then attempts to log on to the system by using these names and systematically guessing possible passwords (such as children’s names)</i>
+            <article>
+                <p>In any networked system, there are three main types of security threats:</p>
+                <ol>
+                <li>Threats to the confidentiality of the system and its data These can disclose information to people or programs that are not authorized to have access to that information.</li>
+                <li>Threats to the integrity of the system and its data These threats can damage or corrupt the software or its data.</li>
+                </ol>
+            </article>
+                <p>These threats are, of course, interdependent. If an attack makes the system unavailable, then you will not be able to update information that changes with  time. This means that the integrity of the system may be compromised. If an attack succeeds and the integrity of the system is compromised, then it may have to be taken down to repair the problem. Therefore, the availability of the system is reduced.</p>
+                <p>In practice, most vulnerabilities in sociotechnical systems result from human failings rather than technical problems. People choose easy-to-guess passwords or write down their passwords in places where they can be found. System administrators make errors in setting up access control or configuration files and users don’t install or use protection software. However, as I discussed in Section 10.5, we have to be very careful when classifying a problem as a user error. Human problems often reflect poor systems design decisions that require, for example, frequent password changes (so that users write down their passwords) or complex configuration mechanisms.</p>
+                <p>The controls that you might put in place to enhance system security are comparable to those for reliability and safety:</p>
+            <article>
+                <ol>
+                    <li>Vulnerability avoidance Controls that are intended to ensure that attacks are unsuccessful. The strategy here is to design the system so that security problems are avoided. For example, sensitive military systems are not connected to public networks so that external access is impossible. You should also think of encryption as a control based on avoidance. Any unauthorized access to encrypted data means that it cannot be read by the attacker. In practice, it is very expensive and time consuming to crack strong encryption.</li>
+                    <li>Attack detection and neutralization Controls that are intended to detect and repel attacks. These controls involve including functionality in a system that monitors its operation and checks for unusual patterns of activity. If these are detected, then action may be taken, such as shutting down parts of the system, restricting access to certain users, etc.</li>
+                    <li>Exposure limitation and recovery Controls that support recovery from problems. These can range from automated backup strategies and information ‘mirroring’ to insurance policies that cover the costs associated with a successful attack on the system.</li> 
+                </ol>
+            </article>
+
+            <p>Without a reasonable level of security, we cannot be confident in a system’s availability, reliability, and safety. Methods for certifying availability, reliability, and security assume that the operational software is the same as the  software that was originally installed. If the system has been attacked and the software has been compromised in some way (for example, if the software has been modified to include a worm), then the reliability and safety arguments no longer hold.</p>
+            <p>Errors in the development of a system can lead to security loopholes. If a system does not respond to unexpected inputs or if array bounds are not checked, then attackers can exploit these weaknesses to gain access to the system. Major security incidents such as the original Internet worm (Spafford, 1989) and the Code Red worm more than 10 years later (Berghel, 2001) took advantage of the  same vulnerability. Programs in C# do not include array bound checking, so it is possible to overwrite part of memory with code that allows unauthorized access to the system.</p>
+
+        </section>
+
+        <section>
+            <h3>Key Points</h3>
+            <article>
+                <o>
+                    <li>Failure of critical computer systems can lead to large economic losses, serious information loss, physical damage, or threats to human life.</li>
+                    <li>The dependability of a computer system is a system property that reflects the user’s degree of trust in the system. The most important dimensions of dependability are availability, reliability, safety, and security</li>
+                    <li>The availability of a system is the probability that the system will be able to deliver services to its users when requested to do so. Reliability is the probability that system services will be delivered as specified.</li>
+                    <li>Perceived reliability is related to the probability of an error occurring in operational use.  A program may contain known faults but may still be experienced as reliable by its users. They may never use features of the system that are affected by the faults.</li>
+                    <li>The safety of a system is a system attribute that reflects the system’s ability to operate, normally or abnormally, without injury to people or damage to the environment.</li>
+                    <li>Security reflects the ability of a system to protect itself against external attacks. Security failures may lead to loss of availability, damage to the system or its data, or the leakage of information to unauthorized people.</li>
+                    <li>Without a reasonable level of security, the availability, reliability, and safety of the system may be compromised if external attacks damage the system. If a system is unreliable, it is difficult to ensure system safety or security, as they may be compromised by system failures.</li>
+                </o>
+            </article>
+        </section>
+
+        <section>
+            <h3>Further Reading</h3>
+            <p>‘The evolution of information assurance’. An excellent article discussing the need to protect critical information in an organization from accidents and attacks. (R. Cummings, IEEE Computer, 35 (12), December 2002.) http://dx.doi.org/10.1109/MC.2002.1106181.</p>
+            <p>‘Designing Safety Critical Computer Systems’. This is a good introduction to the field of safety-critical systems, which discusses the fundamental concepts of hazards and risks. More accessible than Dunn’s book on safety-critical systems. (W. R. Dunn, IEEE Computer, 36 (11), November 2003.)  http://dx.doi.org/10.1109/MC.2003.1244533.</p>
+            <p>Secrets and Lies: Digital Security in a Networked World. An excellent, very readable book on computer security which approaches the subject from a sociotechnical perspective. Schneier’s columns on security issues in general (URL below) are also very good. (B. Schneier, John Wiley & Sons, 2004.) http://www.schneier.com/essays.html.</p>
+        </section>
+
+        <section>
+            <h3>Exercises</h3>
+            <p><b>11.1</b> Suggest six reasons why software dependability is important in most sociotechnical systems.</p>
+            <p><b>11.2</b> What are the most important dimensions of system dependability?</p>
+            <p><b>11.3</b> Why do the costs of assuring dependability increase exponentially as the reliability requirement increases?</p>
+            <p><b>11.4</b> Giving reasons for your answer, suggest which dependability attributes are likely to be mostn critical for the following systems:</p>
+                <ol>An Internet server provided by an ISP with thousands of customers</ol>
+                <ol>A computer-controlled scalpel used in keyhole surgery</ol>
+                <ol>A directional control system used in a satellite launch vehicle</ol>
+                <ol>An Internet-based personal finance management system</ol>   
+            <p><b>11.5</b> Identify six consumer products that are likely to be controlled by safety-critical software systems.</p>
+            <p><b>11.6</b> Reliability and safety are related but distinct dependability attributes. Describe the most important distinction between these attributes and explain why it is possible for a reliable system to be unsafe and vice versa.</p>
+            <p><b>11.7</b> In a medical system that is designed to deliver radiation to treat tumors, suggest one hazard that may arise and propose one software feature that may be used to ensure that the identified hazard does not result in an accident.</p>
+            <p><b>11.8</b> In computer security terms, explain the differences between an attack and a threat.</p>
+            <p><b>11.9</b> Using the MHC-PMS as an example, identify three threats to this system (in addition to the threat shown in Figure 11.8). Suggest controls that might be put in place to reduce the chances of a successful attack based on these threats.</p>
+            <p><b>11.10</b> As an expert in computer security, you have been approached by an organization that campaigns for the rights of torture victims and have been asked to help the organization gain unauthorized access to the computer systems of an American company. This will help them confirm or deny that this company is selling equipment that is used directly in the torture of political prisoners. Discuss the ethical dilemmas that this request raises and how you would react to this request.</p>
+        </section>
+
+    </main>
+</body>
