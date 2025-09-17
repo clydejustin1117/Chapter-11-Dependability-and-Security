@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>11.3 SAFETY</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>11.3 Safety</h1>
+  <body> 
+    <article>
+        <h1>11.3 SAFETY </h1>
+    
+    </article>
+  <main>
     <article>Safety-critical system where it is essential that system operation is always safe; that is, the system should never damage people or the system's environment even if the system fails. Examples of safety-critical systems include control and monitoring systems in  aircraft , process control system in chemical and pharmaceutical plants, and automobile control systems.</article>
        <article>Hardware control of safety-critical systems is simpler to implement and analyze than software control. However, we now build systems of such complexity that they cannot be controlled by hardware alone. Software control is essential because of the need to manage large numbers of sensors and actuators with complex control laws. For example, advanced, aerodynamically unstable, military aircraft require continual software-controlled adjustment of their flight surfaces to ensure that they do not crash.</article>
        <article>Safety-critical software falls into two classes:</article>
@@ -18,8 +23,12 @@
        <p>...difficulties with requirements are the key root cause of the safetyrelated software errors, which have persisted until integration and system testing.</p>
        <p><ol>3.Hardware malfunctions may cause the system to behave in an unpredictableway, and present the software with an unanticipated environment. When components are close to physical failure, they may behave erratically and generatesignals that are outside the ranges that can be handled by the software.</ol></p>
        <center><img src="d:\User Files\Pictures\ss.png" alt=""></center>
-       <section><b>Figure 11.6</b> </section>
-       <section>Safety terminology</section>
+       </main>
+
+       <h2><section><b>Figure 11.6</b> </section></h2>
+       
+       
+      <h5> <section>Safety terminology</section>
        <p><ol>4. The system operators may generate inputs that are not individually incorrect butwhich, in some situations, can lead to a system malfunction. An anecdotalexample of this occurred when an aircraft undercarriage collapsed whilst theaircraft was on the ground. Apparently, a technician pressed a button thatinstructed the utility management software to raise the undercarriage. The software carried out the mechanic’s instruction perfectly. However, the systemshould have disallowed the command unless the plane was in the air.</ol></p>
        <p><article>A specialized vocabulary has evolved to discuss safety-critical systems and it isimportant to understand the specific terms used. Figure 11.6 summarizes some definitions of important terms, with examples taken from the insulin pump system.</article></p>
 
@@ -30,8 +39,9 @@
        <article>Accidents most often occur when several things go wrong at the same time. Ananalysis of serious accidents (Perrow, 1984) suggests that they were almost all due toa combination of failures in different parts of a system. Unanticipated combinationsof subsystem failures led to interactions that resulted in overall system failure. Forexample, failure of an air-conditioning system could lead to overheating, which thencauses the system hardware to generate incorrect signals. Perrow also suggests that itis impossible to anticipate all possible combinations of failures. Accidents are therefore an inevitable part of using complex systems.</article>
        <article>Some people have used this as an argument against software control. Because ofthe complexity of software, there are more interactions between the different parts ofa system. This means that there will probably be more combinations of faults thatcould lead to system failure.</article>
        <article>However, software-controlled systems can monitor a wider range of conditionsthan electro-mechanical systems. They can be adapted relatively easily. They usecomputer hardware, which has very high inherent reliability and which is physicallysmall and lightweight. Software-controlled systems can provide sophisticated safetyinterlocks. They can support control strategies that reduce the amount of time peopleneed to spend in hazardous environments. Although software control may introducemore ways in which a system can go wrong, it also allows better monitoring and protection and hence can contribute to improvements in system safety.</article>
-       <article>In all cases, it is important to maintain a sense of proportion about system safety.It is impossible to make a system 100% safe and society has to decide whether or notthe consequences of an occasional accident are worth the benefits that come from theuse of advanced technologies. It is also a social and political decision about how todeploy limited national resources to reduce risk to the population as a whole.</article>
-    
+       <article>In all cases, it is important to maintain a sense of proportion about system safety.It is impossible to make a system 100% safe and society has to decide whether or notthe consequences of an occasional accident are worth the benefits that come from theuse of advanced technologies. It is also a social and political decision about how todeploy limited national resources to reduce risk to the population as a whole.</article>  </h5>
+  
+    </body>
        <footer>
        <article>Accidents most often occur when several things go wrong at the same time. Ananalysis of serious accidents (Perrow, 1984) suggests that they were almost all due toa combination of failures in different parts of a system. Unanticipated combinationsof subsystem failures led to interactions that resulted in overall system failure. Forexample, failure of an air-conditioning system could lead to overheating, which thencauses the system hardware to generate incorrect signals. Perrow also suggests that itis impossible to anticipate all possible combinations of failures. Accidents are therefore an inevitable part of using complex systems.</article>
        <article>Some people have used this as an argument against software control. Because ofthe complexity of software, there are more interactions between the different parts ofa system. This means that there will probably be more combinations of faults thatcould lead to system failure.</article>

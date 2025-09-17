@@ -1,9 +1,53 @@
+root{
+    --primary-color: #9ee9e1;
+    --secondary-color: #edefef;
+    --accent: #2686db;
+    
+    
+    
+}
+h1{
+   color: black;
+    font-weight: bold;;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 28px;
+    text-align: center;
+    background: linear-gradient(to right, #2686db, #edefef)
+}
+
+main{
+    background: linear-gradient(to right, #9ee9e1, #edefef );
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;;
+}
+ 
+h2 {
+    font-size: 30px;
+    background: linear-gradient(to right, #2686db, #edefef);
+    border-radius: 10px;
+}
+
+h5 {
+    background: linear-gradient(to right, #9ee9e1, #edefef );
+    border-radius: 10px;
+    font-style: normal;
+
+}
+ 
+
+
+
+
+
+
 footer {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-style: italic;
+    font-style: normal;
     text-align: center;
-    background-color:#3498db;
+    background-color: #b5b3b3;
     padding: 1px;
-    margin: -15px;
+    margin: 2px;
     border-radius: 30px;
 }
