@@ -1,9 +1,115 @@
+:root{
+    --primary-color: #1ecbe1;
+    --secondary-color: #c3feff;
+    --light: #e0f7fa;
+    --dark: #0b4a52;
+}
+
+/* Custom Fonts */
+@font-face {
+    font-family: 'Amagro';
+    src: url(/Fonts/Amagro.ttf);
+}
+
+@font-face {
+    font-family: 'Barlow';
+    src: url(/Fonts/Barlow-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url(/Fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url(/Fonts/PlayfairDisplay-Regular.ttf);
+}
+/* Custom Fonts */
+
+/* Body Styles */
+body{
+    margin: 20px 20px 20px 20px;
+    background-color: var(--light);
+    color: var(--dark);
+} 
+/* Body Styles */
+
+/*Header Styles*/
+.chapter{
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    font-family:'Bebasneue', sans-serif;
+}
+/*Header Styles*/
+
+/*Main Styles*/
+main {
+    font-family: 'Barlow', sans-serif;
+    font-size: 19px;
+}
+/*Main Styles*/
+
+/* Image Styles */
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 var(--dark)
+}
+/* Image Styles */
+
+/* Figure Texts */
+.figure{
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+}
+/* Figure Texts */
+
+/*Header 3 Styles*/
+h3{
+    text-align: center;
+    font-family: 'Amagro', sans-serif;
+    font-size: 25px;
+    color: white;
+    background-color: var(--dark);
+    margin-left: -20px;
+    margin-right: -20px;
+}
+/*Header 3 Styles*/
+
+/*Aditional Content Styles */
+.content{
+    background-color: var(--secondary-color);
+    border-radius: 28px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 var(--dark)
+}
+/*Aditional Content Styles */
+
+/* Footer Styles */
 footer {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Amagro', sans-serif;
     font-style: italic;
     text-align: center;
-    background-color:#3498db;
+    background-color: var(--primary-color);
     padding: 1px;
     margin: -15px;
     border-radius: 30px;
 }
+/* Footer Styles */
+
+/* Author Text Styles */
+.author{
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--dark); 
+}
+/* Author Text Styles */
