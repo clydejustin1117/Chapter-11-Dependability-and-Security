@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import "tailwindcss";
 
-
 @theme {
   --color-primary: #333333;
   --color-secondary: #bedbff;
@@ -169,4 +168,139 @@
 
 .footer-1 {
   @apply bg-tertiary text-white text-center p-4 rounded-t-xl shadow-md font-bebasneue tracking-wide;
+}
+  --color-additional: #54a0ff; 
+}
+@theme {
+    --font-playfair: "Playfair Display", sans-serif;
+    --font-bebasneue: "Bebas Neue", sans-serif;
+}
+  
+@theme {
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+}
+
+@theme {
+  --animate-wiggle2: wiggle 3s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(3deg);
+    }
+    50% {
+      transform: rotate(-3deg);
+    }
+  }
+}
+
+@theme {
+    
+  --animation: var(--animate-pulse); /* pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite */
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.figure-text{
+    @apply text-center font-bold font-playfair animate-bounce;
+}
+.image{
+    @apply h-auto max-w-full shadow-lg m-4 hover:scale-110 transition hover:duration-300 ease-in ;
+}
+.image-container{
+    @apply flex flex-wrap justify-center gap-4 m-5;
+}
+.header-text{
+    @apply bg-tertiary font-bebasneue text-center text-white text-2xl lg:text-4xl p-3 m-3 xl:text-5xl rounded-xl shadow-md lg:rounded-none lg:shadow-none lg:m-0 text-shadow-lg bg-[url(/Images/background.jpg)] bg-blend-lighten md:bg-blend-darken;
+}
+.main-config{
+    @apply p-5; 
+}
+.section-config{
+    @apply bg-section rounded-xl shadow-lg text-[18px] lg:text-[20px] xl:text-[22px] lg:indent-8 indent-6 p-9 m-7;
+}
+.special{
+    @apply bg-secondary italic border-2 border-dashed p-3 m-3 lg:m-13 animate-pulse hover:animate-none md:animate-wiggle2 hover:scale-103 transition delay-50 duration-150 ease-in ;
+}
+.additional{
+    @apply lg:text-[18px] xl:text-[20px] rounded-xl shadow-lg p-8 bg-section cursor-pointer;
+}
+.additional-title{
+    @apply p-1 m-2 text-4xl lg:text-5xl text-center;
+}
+.additional-arrow{
+    @apply text-center text-4xl animate-bounce;
+}
+.additional-content {
+    @apply max-h-0 group-hover:max-h-[3000px] transition-all duration-700 ease-in-out overflow-hidden;
+}
+.additional-anim{
+    @apply transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-300;
+}
+.footer-config{
+    @apply bg-tertiary text-center text-[20px] text-white text-shadow-lg bg-[url(/images/background.jpg)] bg-blend-lighten md:bg-blend-darken;
+}
+.additional-container {
+    @apply pt-4 space-y-4
+}
+.additional-list{
+    @apply list-decimal list-inside ml-6 mt-2 space-y-1
+}
+.main-page-config{
+    @apply bg-secondary font-playfair text-shadow-md scroll-smooth;
+}
+.main-header{
+    @apply text-4xl text-center font-bebasneue;
+}
+.grid-section{
+    @apply bg-section text-center rounded-4xl m-10 p-6 shadow-md 
+}
+.grid{
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 m-3
+}
+.grid-child{
+    @apply bg-additional p-2 rounded-xl shadow-sm border-2 border-solid;
+}
+.grid-child-anim{
+    @apply hover:bg-tertiary hover:animate-wiggle transition hover:delay-10 hover:duration-150 ease-in hover:underline hover:shadow-lg hover:animate-pulse;
+}
+.main-image {
+    @apply hover:rotate-x-15 hover:-rotate-y-30 transition delay-10 duration-150;
+}
+.inside-text {
+    @apply indent-20 overflow-y-auto h-30 
+}
+.navbar {
+    @apply bg-primary text-white p-2 text-center sticky top-0 z-50 p-3 m-3 rounded-xl shadow-md lg:rounded-none lg:shadow-none lg:m-0;
+}
+.navbar-text {
+    @apply hover:text-blue-500 hover:scale-125 pl-[16px] pr-[16px] overflow-auto hover:animate-pulse;
+}
+.active {
+    @apply underline;
+}
+.exercise-test{
+    @apply  transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-500;
 }

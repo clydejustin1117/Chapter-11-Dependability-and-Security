@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main>
+
+        <section>
+
+            <img src="Screenshot 2025-09-03 111732.png" alt="Figure 11.2">
+            <p>Figure 11.2 Cost/dependability curve</p>
+            
+        </section>
+
+        <section>
+
+            <h2>Availability and reliability</h2>
+
+            <p>System availability and reliability are closely related properties that can both be expressed as numerical
+            probabilities. The availability of a system is the probability that the system will be up and running to
+            deliver these services to users on request. The reliability of a system is the probability that the system’s
+            services will be delivered as defined in the system specification. If, on average, 2 inputs in every 1,000
+            cause failures, then the reliability, expressed as a rate of occurrence of failure, is 0.002. If the
+            availability is 0.999, this means that, over some time period, the system is available for 99.9% of that
+            time.</p>
+            <p>Reliability and availability are closely related but sometimes one is more important than the other. If users
+            expect continuous service from a system then the system has a high availability requirement. It must be
+            available whenever a demand is made. However, if the losses that result from a system failure are low and
+            the system can recover quickly then failures don’t seriously affect system users. In such systems, the
+            reliability requirements may be relatively low.</p>
+            <p>A telephone exchange switch that routes phone calls is an example of a system where availability is more
+            important than reliability. Users expect a dial tone when they pick up a phone, so the system has high
+            availability requirements. If a system fault occurs while a connection is being set up, this is often
+            quickly recoverable. Exchange switches can usually reset the system and retry the connection attempt. This
+            can be done very quickly and phone users may not even notice that a failure has occurred. Furthermore, even
+            if a call is interrupted, the consequences are usually not serious. Therefore, availability rather than
+            reliability is the key dependability requirement for this type of system.</p>
+            <p>System reliability and availability may be defined more precisely as follows:</p>
+
+        </section>
+
+        <section>
+
+            <ol>
+                <li><i>Reliability</i> The probability of failure-free operation over a specified time, ina given
+                    environment, for a specific purpose. Cost Low Medium High Very High Ultra-High Dependability Figure
+                    11.2 Cost/dependability curve 296</li>
+                <li><i>Availability</i> The probability that a system, at a point in time, will be operational and able
+                    to deliver the requested services.</i>
+            </ol>
+
+        </section>
+
+        <section>
+
+            <p>One of the practical problems in developing reliable systems is that our intuitive notions of reliability
+                and availability are sometimes broader than these limited definitions. The definition of reliability
+                states that the environment in which the system is used and the purpose that it is used for must be
+                taken into account. If you measure system reliability in one environment, you can’t assume that the
+                reliability will be the same if the system is used in a different way.</p>
+            <p>For example, let’s say that you measure the reliability of a word processor in an office environment
+                where most users are uninterested in the operation of the software. They follow the instructions for its
+                use and do not try to experiment with thesystem. If you then measure the reliability of the same system
+                in a university environment, then the reliability may be quite different. Here, students may explore the
+                boundaries of the system and use the system in unexpected ways. This may result in system failures that
+                did not occur in the more constrained office environment.</p>
+            <p>These standard definitions of availability and reliability do not take into account the severity of
+                failure or the consequences of unavailability. People often accept minor system failures but are very
+                concerned about serious failures that have highconsequential costs. For example, computer failures that
+                corrupt stored data are lessacceptable than failures that freeze the machine and that can be resolved by
+                restarting the computer.</p>
+            <p>A strict definition of reliability relates the system implementation to its specification. That is, the
+                system is behaving reliably if its behavior is consistent with that defined in the specification.
+                However, a common cause of perceived unreliability is that the system specification does not match the
+                expectations of the system users. Unfortunately, many specifications are incomplete or incorrect and it
+                is left to softwareengineers to interpret how the system should behave. As they are not domain experts,
+                they may not, therefore, implement the behavior that users expect. It is also true, of course, that
+                users don’t read system specifications. They may therefore have unrealistic expectations of the system.
+            </p>
+            <p>Availability and reliability are obviously linked as system failures may crash the system. However,
+                availability does not just depend on the number of system crashes, but also on the time needed to repair
+                the faults that have caused the failure. Therefore, if system A fails once a year and system B fails
+                once a month then A is clearly more reliable then B. However, assume that system A takes three days to
+                restart after a failure, whereas system B takes 10 minutes to restart. The availability of system B over
+                the year (120 minutes of down time) is much better than that of system A (4,320 minutes of down time).
+            </p>
+            <p>The disruption caused by unavailable systems is not reflected in the simple availability metric that
+                specifies the percentage of time that the system is available. The time when the system fails is also
+                significant. If a system is unavailable for an hour each day between 3 am and 4 am, this may not affect
+                many users. However, if the same system is unavailable for 10 minutes during the working day, system
+                unavailability will probably have a much greater effect.</p>
+
+        </section>
+
+        <!--Table-->
+
+        <section>
+
+            <img src="Screenshot 2025-09-03 095604.png" alt="Figure 11.3">
+            <p>Figure 11.3 Reliability terminology</p>
+            <p>System reliability and availability problems are mostly caused by system failures. Some of these failures
+                are a consequence of specification errors or failures in other related systems such as a communications
+                system. However, many failures are a consequence of erroneous system behavior that derives from faults
+                in the system. When discussing reliability, it is helpful to use precise terminology and distinguish
+                between the terms ‘fault,’ ‘error,’ and ‘failure.’ I have defined these terms in Figure 11.3 and have
+                illustrated each definition with an example from the wilderness weather system.</p>
+            <p>When an input or a sequence of inputs causes faulty code in a system to be executed, an erroneous state
+                is created that may lead to a software failure. Figure 11.4, derived from Littlewood (1990), shows a
+                software system as a mapping of a set of inputs to a set of outputs. Given an input or input sequence,
+                the program responds by producing a corresponding output. For example, given an input of a URL, a web
+                browser produces an output that is the display of the requested web page.</p>
+            <p>Most inputs do not lead to system failure. However, some inputs or input combinations, shown in the
+                shaded ellipse Ie in Figure 11.4, cause system failures or erroneous outputs to be generated. The
+                program’s reliability depends on the number of system inputs that are members of the set of inputs that
+                lead to an erroneous output. If inputs in the set Ie are executed by frequently used parts of the
+                system, then failures will be frequent. However, if the inputs in Ie are executed by code that is rarely
+                used, then users will hardly ever see failures.</p>
+            <p>Because each user of a system uses it in different ways, they have different perceptions of its
+                reliability. Faults that affect the reliability of the system for one user may never be revealed under
+                someone else’s mode of working (Figure 11.5). In Figure 11.5, the set of erroneous inputs correspond to
+                the ellipse labeled Ie in Figure 11.4. The set of inputs produced by User 2 intersects with this
+                erroneous input set. User 2 will</p>
+
+        </section>
+
+        <section>
+
+            <img src="Screenshot 2025-09-03 101008.png" alt="Figure 11.4">
+            <p>Figure 11.4 A system as an input/outputmapping therefore experience some system failures. User 1 and User
+                3, however, never use inputs from the erroneous set. For them, the software will always be reliable.</p>
+            <p>The practical reliability of a program depends on the number of inputs causing erroneous outputs
+                (failures) during normal use of the system by most users. Software faults that only occur in exceptional
+                situations have little practical effect on the system’s reliability. Consequently, removing software
+                faults may not significantly improve the overall reliability of the system. Mills et al. (1987) found
+                that removing 60% of known errors in their software led to a 3% reliability improvement. Adams (1984),
+                in a study of IBM software products, noted that many defects in the products were only likely to cause
+                failures after hundreds or thousands of months of product usage.</p>
+            <p>System faults do not always result in system errors and system errors do not necessarily result in system
+                failures. The reasons for this are as follows:</p>
+
+            <ol>
+                <li>Not all code in a program is executed. The code that includes a fault (e.g., the failure to
+                    initialize a variable) may never be executed because of the way that the software is used.</li>
+                <img src="Screenshot 2025-09-03 102143.png" alt="Figure 11.5">
+                <p>Figure 11.5</p>
+                <li>Errors are transient. A state variable may have an incorrect value caused by the execution of faulty
+                    code. However, before this is accessed and causes a system failure, some other system input may be
+                    processed that resets the state to a valid value.</li>
+                <li>The system may include fault detection and protection mechanisms. These ensure that the erroneous
+                    behavior is discovered and corrected before the system services are affected.</li>
+            </ol 
+            <p>Another reason why the faults in a system may not lead to system failures is that, in practice,
+            users adapt their behavior to avoid using inputs that they know cause program failures. Experienced users
+            ‘work around’ software features that they have found to be unreliable. For example, I avoid certain
+            features, such as automatic numbering in the word processing system that I used to write this book. When I
+            used auto-numbering, it often went wrong. Repairing the faults in unused features makes no practical
+            difference to the system reliability. As users share information on problems and work-arounds, the effects
+            of software problems are reduced.</p>
+            <p>The distinction between faults, errors, and failures, explained in Figure 11.3, helps identify three
+                complementary approaches that are used to improve the reliability of a system:</p>
+
+            <ol>
+                <li><i>The distinction</i> between faults, errors, and failures, explained in Figure 11.3, helps
+                    identify three complementary approaches that are used to improve the reliability of a system:</li>
+                <li><i>Fault detection and removal</i> The use of verification and validation techniques that increase
+                    the chances that faults will be detected and removed before the system is used. Systematic testing
+                    and debugging is an example of a faultdetection technique.</li>
+                <li><i>Fault tolerance</i> These are techniques that ensure that faults in a system do not result in
+                    system errors or that system errors do not result in system failures. The incorporation of
+                    self-checking facilities in a system and the use of redundant system modules are examples of fault
+                    tolerance techniques.</li>
+            </ol>
+
+            <p>The practical application of these techniques is discussed in Chapter 13, which covers techniques for
+                dependable software engineering.</p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
