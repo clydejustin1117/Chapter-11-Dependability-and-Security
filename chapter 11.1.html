@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 11 Dependability and security</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/output.css">
 </head>
 
-<body>
+
+<div class="navbar">
+    <a class="navbar-text" href="Index.html">Home</a>
+    <a class="navbar-text" href="Introduction.html">Introduction</a>
+    <a class="active navbar-text" href="chapter 11.1.html">Dependability Properties</a>
+    <a class="navbar-text" href="11.2.html">Cost/Dependability Curve</a>
+    <a class="navbar-text" href="11.3 safety.html">Safety</a>
+    <a class="navbar-text" href="11.4 - Security.html">Security</a>
+  </div>
+  
+
+<body class="clr-body">
     
-<article>
+
     <!-- Content visible to the user goes here -->
-    <h1>11.1 Dependability properties</h1>
+    <h1 class="under-clr-title" >11.1 Dependability properties</h1>
     
-    <section> 
+    <section class="sec-p"> 
         <article>
 
             All of us are familiar with the problem of computer system failure. For no obvious reason, our computers sometimes crash or go wrong in some way. Programs running
@@ -25,46 +36,63 @@
     </section>
 
     <section>
-        <article>
+        <article class="sec-p2">
             The dependability of a computer system is a property of the system that reflects its trustworthiness. Trustworthiness here essentially means the degree of confidence
             a user has that the system will operate as they expect, and that the system will not ‘fail’ in normal use. It is not meaningful to express dependability numerically.
         </article>
     </section>
 
-    <article>
-    <img src="Dependability.PNG" alt="Figure 11.1">
+    <div class="img-adjust">
 
-    <p> Rather, we use relative terms such as ‘not dependable,’ ‘very dependable,’ and
+    <img src="Dependability.PNG" alt="Figure 11.1">
+    
+    </div>
+    <p class="fgure11"> Figure 11.1 </p>
+
+    <section class="arc1p">
+    <p class="arc-1-p"> Rather, we use relative terms such as ‘not dependable,’ ‘very dependable,’ and
 ‘ultra-dependable’ to reflect the degrees of trust that we might have in a system.
 Trustworthiness and usefulness are not, of course, the same thing.</p>
-    <p> I don’t think
-that the word processor that I used to write this book is a very dependable system.
+    <p class="arc-1-p2"> I don’t think that the word processor that I used to write this book is a very dependable system.
 It sometimes freezes and has to be restarted. Nevertheless, because it is very useful,
 I am prepared to tolerate occasional failure.</p>
-    <p> However, to reflect my lack of trust in
+    <p  class="arc-1-p3"  > However, to reflect my lack of trust in
 the system I save my work frequently and keep multiple backup copies of it. I compensate for the lack of system dependability by actions that limit the damage that
 could result from system failure</p>
-   </article>
+    </setion>
+    
+    <p class="priciple-p"> There are four principal dimensions to dependability, as shown in Figure 11.1.</p>
 
-<p> There are four principal dimensions to dependability, as shown in Figure 11.1.</p>
-<ol>
 
-<li> Availability Informally, the availability of a system is the probability that it will
-be up and running and able to deliver useful services to users at any given time.</li>
-<li> Reliability Informally, the reliability of a system is the probability, over a given
-period of time, that the system will correctly deliver services as expected by
-the user.
-</li>
-<li> Safety Informally, the safety of a system is a judgment of how likely it is that the
-system will cause damage to people or its environment.</li>
-<li> Security Informally, the security of a system is a judgment of how likely it is that
-the system can resist accidental or deliberate intrusions.</li>
+<div class="grid-section">
+    <div class="grid-card">
+        <h4 class="grid-text">Availability</h4>
+        <p>Informally, the availability of a system is the probability that it will
+            be up and running and able to deliver useful services to users at any given time. </p>
+        </div>
+<div class="grid-card">
+    <h4 class="grid-text">Reliability</h4>
+        <p>Reliability Informally, the reliability of a system is the probability, over a given
+            period of time, that the system will correctly deliver services as expected by
+            the user. </p>
+        </div>
+<div class="grid-card">
+          <h4 class="grid-text">Safety</h4>
+          <p> Safety Informally, the safety of a system is a judgment of how likely it is that the
+            system will cause damage to people or its environment. </p>
+</div>
+    <div class="grid-card">
+        <h4 class="grid-text">Security</h4>
+        <p> Security Informally, the security of a system is a judgment of how likely it is that
+            the system can resist accidental or deliberate intrusions.</p>
+        </div>
+      </div>
+      
 
-</ol>
 
-<section>
+      <section>
 
-<p> The dependability properties shown in Figure 11.1 are complex properties that
+<p  class="dependability-p"> The dependability properties shown in Figure 11.1 are complex properties that
 can be broken down into a number of other, simpler properties. For example, security includes ‘integrity’ (ensuring that the systems program and data are not
 damaged) and ‘confidentiality’ (ensuring that information can only be accessed by
 people who are authorized). Reliability includes ‘correctness’ (ensuring the system
@@ -74,7 +102,7 @@ it is required).</p>
 </section>
 
 <section>
-    <p> Of course, these dependability properties are not all applicable to all systems. For
+    <p class="headsub-title"> Of course, these dependability properties are not all applicable to all systems. For
 the insulin pump system, introduced in Chapter 1, the most important properties are
 availability (it must work when required), reliability (it must deliver the correct dose
 of insulin), and safety (it must never deliver a dangerous dose of insulin). Security is
@@ -82,76 +110,77 @@ not an issue as the pump will not maintain confidential information. It is not n
 availability and reliability are the most important properties because the costs of
 repair may be very high. For the patient information system, security is particularly
 important because of the sensitive private data that is maintained.</p>
+</section>
 
-<p>As well as these four main dependability properties, you may also think of other
+<p class="subsec-title">As well as these four main dependability properties, you may also think of other
 system properties as dependability properties:</p>
-<ol>
-    <article>
-    <li>
-        Repairability System failures are inevitable, but the disruption caused by failure
-can be minimized if the system can be repaired quickly. For that to happen, it
-must be possible to diagnose the problem, access the component that has failed,
-and make changes to fix that component. Repairability in software is enhanced
-when the organization using the system has access to the source code and has
-the skills to make changes to it. Open source software makes this easier but the
-reuse of components can make it more difficult.
 
+<div class="def-grid">
+  <div class="def-grid-item">
+    <h4 class="def-title">Repairability</h4>
+    <p class="def-desc"> Repairability System failures are inevitable, but the disruption caused by failure
+        can be minimized if the system can be repaired quickly. For that to happen, it
+        must be possible to diagnose the problem, access the component that has failed,
+        and make changes to fix that component. Repairability in software is enhanced
+        when the organization using the system has access to the source code and has
+        the skills to make changes to it. Open source software makes this easier but the
+        reuse of components can make it more difficult.</p>
+  </div>
+  <div class="def-grid-item">
+    <h4 class="def-title">Maintainability</h4>
+    <p class="def-desc"> Maintainability As systems are used, new requirements emerge and it is important to maintain the usefulness of a system by changing it to accommodate these
+        new requirements. Maintainable software is software that can be adapted economically to cope with new requirements, and where there is a low probability
+        that making changes will introduce new errors into the system.</p>
+  </div>
+  <div class="def-grid-item">
+    <h4 class="def-title">Survivability</h4>
+    <p class="def-desc">Survivability A very important attribute for Internet-based systems is survivability
+        (Ellison et al., 1999b). Survivability is the ability of a system to continue to
+        deliver service whilst under attack and, potentially, whilst part of the system is
+        disabled. Work on survivability focuses on identifying key system components
+        and ensuring that they can deliver a minimal service. Three strategies are used to
+        enhance survivability—resistance to attack, attack recognition, and recovery
+        from the damage caused by an attack (Ellison et al., 1999a; Ellison et al., 2002).
+        I discuss this in more detail in Chapter 14.</p>
+  </div>
+  <div class="def-grid-item">
+    <h4 class="def-title">Error Tolerance</h4>
+    <p class="def-desc"> Error tolerance This property can be considered as part of usability and reflects
+        the extent to which the system has been designed so that user input errors are
+        avoided and tolerated. When user errors occur, the system should, as far as possible, detect these errors and either fix them automatically or request the user to
+        reinput their data.</p>
+  </div>
+</div>
 
-    </li>
-    Maintainability As systems are used, new requirements emerge and it is important to maintain the usefulness of a system by changing it to accommodate these
-new requirements. Maintainable software is software that can be adapted economically to cope with new requirements, and where there is a low probability
-that making changes will introduce new errors into the system.
-
-     <li>
-        Survivability A very important attribute for Internet-based systems is survivability
-(Ellison et al., 1999b). Survivability is the ability of a system to continue to
-deliver service whilst under attack and, potentially, whilst part of the system is
-disabled. Work on survivability focuses on identifying key system components
-and ensuring that they can deliver a minimal service. Three strategies are used to
-enhance survivability—resistance to attack, attack recognition, and recovery
-from the damage caused by an attack (Ellison et al., 1999a; Ellison et al., 2002).
-I discuss this in more detail in Chapter 14.
-        
-    </li>
-
-     <li>
-         Error tolerance This property can be considered as part of usability and reflects
-the extent to which the system has been designed so that user input errors are
-avoided and tolerated. When user errors occur, the system should, as far as possible, detect these errors and either fix them automatically or request the user to
-reinput their data.
-    </li>
-
-</article>
-</ol>
 
 <section>
-    <p> The notion of system dependability as an encompassing property was introduced
+    <p class="summary-p"> The notion of system dependability as an encompassing property was introduced
 because the dependability properties of availability, security, reliability, and safety are
 closely related. Safe system operation usually depends on the system being available
 and operating reliably. A system may become unreliable because an intruder has corrupted its data. Denial of service attacks on a system are intended to compromise the system’s availability. If a system is infected with a virus, you cannot then be confident
 in its reliability or safety because the virus may change its behavior.</p>
 
-<p> To develop dependable software, you therefore need to ensure that: </p>
+<p class="detail-p"> To develop dependable software, you therefore need to ensure that: </p>
 
 <article>
-    <ol>
+    <ol class="todo-list">
 
-        <li>
+        <li class="todo-item">
             You avoid the introduction of accidental errors into the system during software
 specification and development
         </li>
-        <li>You design verification and validation processes that are effective in discovering
+        <li class="todo-item">You design verification and validation processes that are effective in discovering
 residual errors that affect the dependability of the system.</li>
-<li>  You design protection mechanisms that guard against external attacks that can
+<li class="todo-item">  You design protection mechanisms that guard against external attacks that can
 compromise the availability or security of the system.</li>
-<li> You configure the deployed system and its supporting software correctly for its
+<li class="todo-item"> You configure the deployed system and its supporting software correctly for its
 operating environment.</li> 
 
     </ol>
 </article>
 
 <article>
-    <p>In addition, you should usually assume that your software is not perfect and
+    <p class="closing-p">In addition, you should usually assume that your software is not perfect and
 that software failures may occur. Your system should therefore include recovery
 mechanisms that make it possible to restore normal system service as quickly as
 possible.
@@ -182,19 +211,20 @@ high-dependability systems.</p>
 
 
 
-</body>
-<footer>
+
+<footer">
    
     <section>
         <article>
-        <div class="title">
-            <p id="Blue"> End of Chapter 11.1 Dependability Properties </p>
-            <p> All rights reserved.</p>
+        <div">
+            <p class="footer-1"> End of Chapter 11.1 Dependability Properties </p>
+            <p class="footer-1"> All rights reserved.</p>
 
         </div>
     </article>
     
-</section>
+
 
 </footer> 
+</body>
 </html>

@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #333333;
+  --color-secondary: #bedbff;
+  --color-tertiary: #2b7fff;
+  --color-section: #7ed6df;
+  --color-additional: #54a0ff;
+}
+
+@theme {
+  --font-playfair: "Playfair Display", sans-serif;
+  --font-bebasneue: "Bebas Neue", sans-serif;
+}
+
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px #7ed6df; }
+  50% { box-shadow: 0 0 20px #2b7fff; }
+}
+
+@keyframes zoom-in {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+@keyframes fade-in-down {
+  0% { opacity: 0; transform: translateY(-15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.navbar {
+  @apply bg-primary text-white p-3 text-center sticky top-0 z-50 m-3 rounded-xl shadow-md font-bebasneue;
+  animation: fade-in-down 0.8s ease-in-out;
+}
+
+.navbar-text {
+  @apply inline-block px-4 py-2 text-lg hover:text-blue-500 hover:scale-110 transition-all duration-200 ease-in-out;
+}
+
+.active {
+  @apply underline decoration-additional font-bold text-additional;
+}
+
+
+
+.clr-body {
+  @apply bg-secondary font-playfair flex flex-col items-center justify-center px-8 py-20 space-y-10;
+  animation: fade-in-up 0.8s ease-in-out;
+}
+
+
+.under-clr-title {
+  @apply text-center text-4xl md:text-5xl font-bebasneue text-white bg-tertiary 
+  p-4 rounded-xl shadow-lg underline decoration-section hover:scale-105 transition duration-300;
+  animation: zoom-in 1s ease-in-out;
+}
+
+.sec-p {
+  @apply p-8 text-primary bg-section border-2 border-tertiary rounded-xl m-10 shadow-lg text-center;
+  animation: fade-in-up 1s ease-in-out;
+}
+
+.sec-p2 {
+  @apply p-10 text-white font-bebasneue border-4 border-dashed border-tertiary bg-primary 
+  rounded-xl m-10 text-center shadow-md;
+  animation: fade-in-up 1s ease-in-out;
+}
+
+.arc1p {
+  @apply space-y-6 text-primary leading-relaxed;
+}
+
+.arc-1-p,
+.arc-1-p2,
+.arc-1-p3 {
+  @apply p-6 border border-tertiary rounded-xl text-primary text-center m-10 transition hover:bg-additional hover:text-white;
+}
+
+
+
+.priciple-p {
+  @apply text-xl italic text-primary bg-additional text-center p-5 rounded-2xl border border-primary shadow-md;
+}
+
+.img-adjust {
+  @apply flex flex-wrap justify-center gap-4 transition duration-300 hover:scale-105;
+  animation: fade-in-up 1.2s ease-in-out;
+}
+
+.fgure11 {
+  @apply text-center italic mt-2 text-slate-700;
+}
+
+
+.grid-section {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 m-10;
+}
+
+.grid-card {
+  @apply bg-section border border-tertiary p-6 rounded-xl shadow-md text-primary text-center 
+  hover:scale-105 hover:bg-additional hover:text-white transition duration-300;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.grid-text {
+  @apply font-bold text-lg;
+}
+
+
+.dependability-p {
+  @apply p-10 text-white font-bold border-4 border-dashed border-tertiary m-10 text-center bg-primary rounded-md shadow-md font-playfair;
+}
+
+.headsub-title {
+  @apply bg-additional border-l-4 border-primary p-6 m-10 rounded-md shadow-sm text-primary leading-relaxed text-justify italic;
+}
+
+.subsec-title {
+  @apply text-3xl text-primary underline decoration-additional mt-16 mb-8 text-center font-bebasneue;
+}
+
+
+.def-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6 m-8;
+}
+
+.def-grid-item {
+  @apply bg-section border-l-4 border-primary p-5 rounded-lg shadow-md hover:bg-additional hover:text-white transition duration-300;
+}
+
+.summary-p {
+  @apply bg-primary border border-primary p-6 m-10 rounded-md shadow-md text-white leading-relaxed italic text-xl;
+}
+
+.detail-p {
+  @apply leading-relaxed text-justify m-8 p-6 bg-section italic rounded-md shadow-sm font-playfair;
+}
+
+.todo-list {
+  @apply list-decimal list-inside bg-primary border border-blue-300 p-6 m-10 rounded-md shadow-sm;
+}
+
+.todo-item {
+  @apply text-additional mb-3 text-base leading-relaxed;
+}
+
+.closing-p {
+  @apply italic bg-additional p-6 m-10 text-white rounded-md shadow-md text-justify font-playfair;
+}
+
+
+
+
+.footer-1 {
+  @apply bg-tertiary text-white text-center p-4 rounded-t-xl shadow-md font-bebasneue tracking-wide;
+}
